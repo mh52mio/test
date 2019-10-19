@@ -1,0 +1,204 @@
+@media screen and (max-width: 900px) {
+    body {
+        min-height: 485px;
+        overflow: hidden;
+        position: relative;
+    }
+    @media screen and (max-height: 485px) {
+        body {
+            overflow: visible;
+            padding-bottom: 50px;
+        }
+    }
+
+    /* banner */
+
+    .banner {
+        width: 100%;
+        min-width: 0px;
+        height: 67%;
+        background: url(https://g.sky31.com/images/g_banner_background.png) no-repeat center center;
+        background-size: cover;
+    }
+    .nav {
+        width: 100%;
+        height: 0;
+        position: relative;
+    }
+    .content {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .show-page {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .nav-logo {
+        height: 50px;
+        width: 50px;
+        background: url(https://g.sky31.com/images/g_logo.png) no-repeat center center;
+        background-size: contain;
+        margin: 20px;
+        border-radius: 7px;
+    }
+    .nav-name {
+        display: inline-block;
+        line-height: 85px;
+        font-size: 30px;
+        color: #fff;
+    }
+    .nav-device {
+        display: none;
+    }
+
+    /* 瀵艰埅鏍忕粨鏉� */
+
+    /* 淇℃伅寮€濮� */
+    .info {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 90px 0 0 0;
+    }
+    .mobile-div {
+        position: absolute;
+        width: 100%;
+        bottom: 45px;
+    }
+    .g-for-device {
+        font-size: 30px;
+        width: 88%;
+    }
+    .g-for-device:after {
+        display: none;
+    }
+    .g-for-device .g-name {
+        display: block;
+        font-size: 35px;
+    }
+    .g-for-device .version {
+        display: inline-block;
+        height: 25px;
+        width: 80px;
+        font-size: 15px;
+        line-height: 25px;
+        margin-left: 0px;
+        position: absolute;
+        top: 23px;
+        left: 80px;
+    }
+    .g-slogan {
+        display: none;
+    }
+    /* 淇℃伅缁撴潫 */
+
+    /* 涓嬭浇 */
+    .download {
+        margin: 10px 0;
+        margin-left: 6%;
+        height: 70px;
+        width: 45%;
+        max-width: 280px;
+    }
+    .g-download-btn {
+        float: left;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 70px;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 10px;
+        background: #fb6c6d;
+                user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        cursor: pointer;
+    }
+    .g-download-btn i {
+        margin-right: 15px;
+    }
+    .g-download-QRcode {
+/*         display: none; */
+    }
+    .package-size {
+        font-size: 12px;
+        margin-right: 10px;
+        margin-left: 6%;
+    }
+    .update-info {
+        font-size: 12px;
+    }
+    /* 涓嬭浇缁撴潫 */
+    .device-preview {
+        width: 40%;
+        height: 80%;
+        position: absolute;
+        right: 82px;
+        bottom: 40px;
+        right: 3%;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-size: contain;
+    }
+    .device-preview.android {
+        background-image: url(https://g.sky31.com/images/g_device_preview_android_mobile.png);
+    }
+
+    /* banner end */
+
+    /* introduce */
+
+    .introduce {
+        width: 90%;
+        height: 33%;
+        padding: 0;
+    }
+
+    .g-feature {
+        height: 100%;
+        float: left;
+    }
+    
+    .g-feature:nth-child(1) .g-feature-pic {background: url(https://g.sky31.com/images/g_feature.png) no-repeat 0px 0px;background-size: 400% auto;}
+    .g-feature:nth-child(2) .g-feature-pic {background: url(https://g.sky31.com/images/g_feature.png) no-repeat 33.3% 0px;background-size: 400% auto;}
+    .g-feature:nth-child(3) .g-feature-pic {background: url(https://g.sky31.com/images/g_feature.png) no-repeat 66.6% 0px;background-size: 400% auto;}
+    .g-feature:nth-child(4) .g-feature-pic {background: url(https://g.sky31.com/images/g_feature.png) no-repeat 100% 0px;background-size: 400% auto;}
+    .g-feature-pic {
+        width: 80%;
+        height: 0;
+        padding-bottom: 80%;
+        margin: 20px auto 0;
+    }
+
+    .g-feature-words {
+        margin-top: 10px;
+        text-align: center;
+        color: #373737;
+        font-size: 14px;
+    }
+    .g-feature-words:last-child {
+        display: none;
+    }
+
+    /* introduce end */
+
+    /* footer */
+
+    .footer {
+        min-width: 0;
+        height: 50px;
+        line-height: 50px;
+        background: transparent;
+        color: #989898;
+        font-size: 12px;
+        position: absolute;
+        bottom: 0;
+    }
+
+    /* footer end */
+}
