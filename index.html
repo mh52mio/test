@@ -1,551 +1,188 @@
-<!DOCTYPE html>  
-<html lang="en">  
-    <head>  
-        <meta charset="UTF-8">  
-        <title>神奇的蓝脑阔</title>  
-        <style type="text/css">  
-            * {   
-                margin: 0;   
-                padding: 0;   
-              }   
-            .doraemon {      
-                margin: 20px auto; 
-                width: 800px;     
-                position: relative;
-                background-color: white;    
-              }   
-            .head {   
-                margin: 0 auto;      
-                width: 160px;   
-                height: 150px;      
-                border-radius: 75px;   
-                border: 2px solid black; 
-                position: relative;
-                background-color: #00b7e7;  
-              }   
-            .eyes .left_eye,   
-            .eyes .right_eye {   
-                width: 30px;   
-                height: 35px;        
-                border-radius: 15px;  
-                border: 2px solid black; 
-                position: absolute;   
-                top: 4px; 
-                background-color: white;   
-                z-index: 3;   
-              }   
-            .eyes .L_eyeball {   
-                width: 10px;   
-                height: 15px;     
-                border-radius: 50%;   
-                position: absolute;   
-                top: 16px;
-                background-color: black;  
-              }
-     
-            .eyes .R_eyeball {   
-                width: 12px;   
-                height: 12px;     
-                border-radius: 12px;
-                border:2px solid black;   
-                position: absolute;   
-                top: 19px;
-                background-color: white;    
-              }   
-            .eyes .left_eye {   
-                left: 46px;   
-              }  
-            .eyes .L_eyeball {   
-                right: 5px;   
-              }    
-            .eyes .right_eye {   
-                left: 80px;   
-              }   
-            .eyes .R_eyeball {   
-                left: 3px;   
-              } 
-            .eyes .L_eyeball_light {
-            	width:4px;
-            	height:4px;
-            	border-radius:2px;
-            	position: absolute;
-            	top:6px;
-            	left:3px;
-            	background-color:white;
-            } 
-            .eyes .R_eyeball_cover {
-            	width:16px;
-            	height:8px;
-            	border-bottom-left-radius:6px;
-            	position: absolute;
-            	top:26px;
-            	left:3px;
-            	background-color:white;
-            } 
-            .face {   
-                position: relative;   
-                z-index: 2;   
-              }   
-            .face .white {   
-                width: 145px;   
-                height: 126px;   
-                border-radius: 65px;
-                border: 2px solid black;   
-                position: absolute;   
-                top: 20px;   
-                left: 5px;   
-                background: white;   
-              }   
-            .face .nose {   
-                width: 18px;   
-                height: 18px;   
-                border-radius: 10px;     
-                border: 2px solid black;   
-                position: absolute;   
-                top: 35px;   
-                left: 69px; 
-                background-color: #ea0000;   
-                z-index: 3;   
-              } 
-            .face .nose_light{
-				width:8px;
-				height:8px;
-				border-radius:4px;
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				text-decoration: none;
+			}
+			.body {
+				padding: 20px;
+				width:100%;
+				
+			}
+			#container {
+				width: 520px;
+				height: 610px;
+				border: 3px solid #333;
+				overflow: hidden;
+				position: relative;
+				left:380px;
+			}
+			#list {
+				width: 4800px;
+				height: 500px;
 				position: absolute;
-				top: 5px;
-				left: 5px;
-				background-color:white;
-				box-shadow:0 0 0 #fff;
-				z-index: 4;
-			}  
-            .face .nose_line {   
-                width: 2px;   
-                height: 60px;     
-                position: absolute;   
-                top: 57px;   
-                left: 79px; 
-                background: black;   
-                z-index: 3;   
-              }   
-            .face .mouth {   
-                width: 120px;   
-                height: 120px;      
-                border-radius: 50px; 
-                border-bottom: 3px solid black;  
-                position: absolute;   
-                top: -5px;   
-                left: 21px;   
-              }   
-            .face .whiskers .whiskerL_top {   
-                width: 45px;   
-                height: 2px;     
-                position: absolute;   
-                top: 50px;   
-                left: 90px; 
-                background-color: black;   
-                z-index: 2;   
-              }   
-            .face .whiskers .whiskerL_middle {   
-                width: 50px;   
-                height: 2px;      
-                position: absolute;   
-                top: 70px;   
-                left: 93px; 
-                background-color: black;  
-                z-index: 2;   
-              }   
-            .face .whiskers .whiskerL_bottom {   
-                width: 50px;   
-                height: 2px;     
-                position: absolute;   
-                top: 90px;   
-                left: 90px;
-                background-color: black;    
-                z-index: 2;   
-              }   
-            .face .whiskers .whiskerR_top {   
-                width: 45px;   
-                height: 2px;     
-                position: absolute;   
-                top: 50px;   
-                left: 23px; 
-                background-color: black;   
-                z-index: 2;   
-              }   
-            .face .whiskers .whiskerR_middle {   
-                width: 50px;   
-                height: 2px;     
-                position: absolute;   
-                top: 70px;   
-                left: 16px;
-                background-color: black;    
-                z-index: 2;   
-              }   
-            .face .whiskers .whiskerR_bottom {   
-                width: 50px;   
-                height: 2px;     
-                position: absolute;   
-                top: 90px;   
-                left: 23px;
-                background-color: black;    
-                z-index: 2;   
-              } 
-            .face .whiskers .whiskerR_bottom,   
-            .face .whiskers .whiskerL_top { 
-            	-webkit-transform: rotate(160deg);
-                -moz-transform: rotate(160deg);
-                -ms-transform: rotate(160deg);
-                -o-transform: rotate(160deg);  
-                transform: rotate(160deg);   
-              }   
-            .face .whiskers .whiskerR_top,   
-            .face .whiskers .whiskerL_bottom { 
-            	-webkit-transform: rotate(200deg);
-                -moz-transform: rotate(200deg);
-                -ms-transform: rotate(200deg);
-                -o-transform: rotate(200deg);  
-                transform: rotate(200deg);   
-              }   
-            .neck {   
-                width: 110px;   
-                height: 8px;         
-                border-radius: 4px; 
-                border: 2px solid black;  
-                position: relative;   
-                top: -15px;   
-                left: 343px; 
-                background-color: #ea0000;  
-                z-index: 4;   
-              }   
-            .neck .bell {   
-                width: 26px;   
-                height: 26px;       
-                border-radius: 13px; 
-                border: 2px solid black;     
-                position: absolute;   
-                top: 5px;   
-                left: 43px; 
-                background-color: yellow;
-                overflow: hidden;  
-              }   
-            .bell .bell_line {   
-                width: 30px;   
-                height: 1px;         
-                border-radius: 2px 2px 0 0;
-                border: 2px solid black;   
-                position: absolute;   
-                top: 6px;
-                background-color: yellow;   
-              }   
-            .bell .bell_circle {   
-                width: 10px;   
-                height: 8px;      
-                border-radius: 4px;   
-                position: absolute;      
-                left: 9px; 
-                top: 12px;
-                background-color: saddlebrown;  
-              }   
-            .bell .bell_bottom {   
-                width: 2px;   
-                height: 10px;      
-                position: absolute;   
-                left: 13px;   
-                top: 18px; 
-                background-color: black;  
-              }   
-            .body {   
-                position: relative;   
-                top: -294px;   
-                z-index: 1;   
-              } 
-            .body .cover_left {
-            	width:20px;
-            	height:16px;
-            	position:absolute;
-            	left:330px;
-            	top:279px;
-            	background-color: #00b7e7;
-            	z-index: 2;
-            } 
-            .body .cover_right {
-            	width:20px;
-            	height:16px;
-            	position:absolute;
-            	left:450px;
-            	top:279px;
-            	background-color: #00b7e7;
-            	z-index: 2;
-            } 
-            .body .tummy {   
-                width: 117px;   
-                height: 115px; 
-                border-radius: 5px;
-                border-top-left-radius:30px;
-                border-top-right-radius:30px;        
-                border: 2px solid black;   
-                position: absolute;   
-                top: 267px;   
-                left: 340px;
-                background-color: #00b7e7;    
-              }   
-            .body .wrap {   
-                width: 100px;   
-                height: 100px;         
-                border-radius: 45px;
-                border-top-left-radius:60px;
-                border-top-right-radius:60px; 
-                border: 2px solid black;  
-                position: absolute;   
-                left: 349px;   
-                top: 260px; 
-                background-color: white;  
-              }   
-            .body .pocket {   
-                width: 60px;   
-                height: 60px;   
-                border-radius: 27px;      
-                border: 2px solid black;   
-                position: absolute;   
-                top: 290px;   
-                left: 370px; 
-                background-color: white;  
-              }   
-            .pocket_cover {   
-                width: 64px;   
-                height: 40px;     
-                border-bottom: 2px solid black;   
-                /*border: 5px solid orange;*/   
-                position: absolute;   
-                top: 280px;   
-                left: 370px; 
-                background-color: white;  
-              }   
-            .left_hand { 
-            	width: 50px;  
-                height: 50px;      
-                position: absolute;   
-                top: 20px;   
-                left: 180px;   
-              }
-			
-			.right_hand { 
-            	width: 50px;  
-                height: 50px;      
-                position: absolute;   
-                top: 20px;   
-                left: 180px;   
-              }
-            .left_hand {   
-                left: -10px;   
-              }   
-            .left_hand .left_arm {   
-                width: 52px;   
-                height: 80px; 
-                border-radius:40px/60px;     
-                border: 2px solid black;   
-                position: relative;   
-                top: 110px;   
-                left: 438px;
-                background-color: #00b7e7;
-                -webkit-transform: rotate(300deg);
-                -moz-transform: rotate(300deg);
-                -ms-transform: rotate(300deg);
-                -o-transform: rotate(300deg);
-                transform: rotate(300deg);   
-                /*transform: rotateZ(135deg);   
-                z-index: -1;*/   
-              }   
-            .right_hand {   
-				left: 310px;
-				top: 120px;
-                animation:right_hand 1s linear infinite;
-                display:block;
-                
-                
-              } 
-             @keyframes right_hand{
-            	from{
-            		transform:rotate(-20deg);
-            	}
-            	to{transform:rotate(-60deg);
-            	}
+				left: 350px;
+				z-index: 1;
+			}
+			#list img {
+				float: left;
+				width: 620px;
+			}
+			#buttons {
+				position: absolute;
+				height: 10px;
+				width: 100px;
+				z-index: 2;
+				bottom: 20px;
+				left: 250px;
+			}
+			#buttons span {
+				cursor: pointer;
+				float: left;
+				border: 1px solid #fff;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: #333;
+				margin-right: 5px;
+			}
+			#buttons .on{
+				background-color:orange;
+			}
+			.arrow{
+				cursor:pointer;
+				display: none;
+				line-height: 39px;
+				text-align: center;
+				font-size: 36px;
+				font-weight: bold;
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				z-index: 2;
+				top: 270px;
+				background-color: RGBA(0,0,0,.3);
+				color: #fff; 
+			}
+			.arrow:hover{
+				background-color: RGBA(0,0,0,.7);
+			}
+			#container:hover .arrow{
+				display: block;
+			}
+			#prev{
+				left:20px;
+			}
+			#next{
+				right:20px;
+			}
+		</style>
+		<script type="text/javascript">
+        window.onload = function () {
+            var container = document.getElementById('container');
+            var list = document.getElementById('list');
+            var buttons = document.getElementById('buttons').getElementsByTagName('span');
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var index = 1;
+            var timer;
+            function animate(offset) {
+                var newLeft = parseInt(list.style.left) + offset;
+                list.style.left = newLeft + 'px';
+                if (newLeft > -620) {
+                    list.style.left = -3110 + 'px';
+                }
+                if (newLeft < -3110) {
+                    list.style.left = -620 + 'px';
+                }
             }
-            .right_hand:hover{
-            	animation-play-state:paused;
-            	animation: right_hand 5s ease-out .1s;
+            function play() {
+                timer = setInterval(function () {
+                    next.onclick();
+                }, 2000)
             }
-            .right_hand .right_arm { 
-            	width: 40px;   
-                height: 90px;      
-                border: 2px solid black; 
-                border-radius:40px/100px;
-                top: 83px;   
-                left: 320px; 
-                background-color: #00b7e7;   
-                /*z-index: -1;*/ 
-                -webkit-transform: rotate(130deg);
-                -moz-transform: rotate(130deg);
-                -ms-transform: rotate(130deg);
-                -o-transform: rotate(130deg);
-                transform: rotate(130deg);
-				transform-origin:40% 40%;
-              }      
-            .right_hand .right_palm {   
-                width: 38px;   
-                height: 38px;   
-                border-radius: 19px;   
-                border: 2px solid black;      
-                position: absolute; 
-                background-color: white;  
-              }   
-            .right_hand .right_palm {   
-                left: -50px;   
-                top: -20px;   
-                z-index: 1;   
-              }   
-            .foot .left_foot {   
-                width: 72px;   
-                height: 23px;        
-                border-radius: 10px 30px 20px 25px;
-                border: 2px solid black;    
-                position: relative;
-                background-color: white;   
-              }      
-            .foot .right_foot {   
-                width: 72px;   
-                height: 23px;        
-                border-radius: 30px 10px 25px 20px;
-                border: 2px solid black;    
-                position: relative;
-                background-color: white;   
-              }   
-            .foot .left_foot {   
-                left: 398px;   
-                top: 89px;   
-              }   
-            .foot .right_foot {  
-            	left: 328px; 
-                top: 63px;    
-              }   
-            .foot .foot_crevice {   
-                width: 0px;   
-                height: 10px;         
-                border-bottom: none;    
-                border: 1px solid black;  
-                position: relative;   
-                top: 27px;   
-                left: 401px;
-                background-color: white;   
-                z-index: 2   
-              } 
-            .foot .foot_line {
-            	width: 20px;
-            	height: 0px;         
-                border-bottom: none;    
-                border: 1px solid black;  
-                position: relative;   
-                top: 15px;   
-                left: 391px;
-                background-color: white;   
-                z-index: 2  
-            }  
-        </style>  
-    </head>  
-    <body>  
-        <div class="wrapper">  
-            <div class="doraemon">  
-            <!-- 头 -->  
-            <div class="head">  
-                <!-- 眼 -->  
-                <div class="eyes">  
-                <!-- 左眼 -->  
-                <div class="left_eye">  
-                    <!-- 左眼球 -->  
-                    <div class="L_eyeball">
-                    	<!--左眼眼白-->
-                    	<div class="L_eyeball_light"></div>
-                    </div>  
-                </div>  
-                <!-- 右眼 -->  
-                <div class="right_eye">  
-                    <!-- 右眼球 -->  
-                    <div class="R_eyeball"></div>
-                    <!--右眼遮挡物-->
-                    <div class="R_eyeball_cover"></div>  
-                </div>  
-            </div>  
-            <!-- 脸 -->  
-            <div class="face">  
-                <!-- 白脸 -->  
-                <div class="white"></div>  
-                <!-- 鼻 -->  
-                <div class="nose">
-                	<!--鼻子上的光-->
-					<div class="nose_light"></div>
-                </div>  
-                <!-- 鼻子下方的线 -->  
-                <div class="nose_line"></div>  
-                <!-- 嘴 -->  
-                <div class="mouth"></div>  
-                <!-- 胡子 -->  
-                <div class="whiskers">  
-                    <div class="whiskerL_top"></div>  
-                    <div class="whiskerL_middle"></div>  
-                    <div class="whiskerL_bottom"></div>  
-                    <div class="whiskerR_top"></div>  
-                    <div class="whiskerR_middle"></div>  
-                    <div class="whiskerR_bottom"></div>  
-                </div>  
-            </div>  
-            </div>  
-            <!-- 脖子 -->  
-            <div class="neck">  
-                <!-- 铃铛 -->  
-                <div class="bell">  
-                    <div class="bell_line"></div>  
-                    <div class="bell_circle"></div>  
-                    <div class="bell_bottom"></div>  
-                </div>  
-            </div>  
-            <!-- 身体 -->  
-            <div class="body">
-            	<!--遮挡物1-->
-            	<div class="cover_left"></div>
-            	<!--遮挡物2-->
-            	<div class="cover_right"></div>
-                <!-- 肚子 -->  
-                <div class="tummy"></div>  
-                <!-- 肚兜 -->  
-                <div class="wrap"></div>  
-                <!-- 口袋 -->  
-                <div class="pocket"></div>  
-                <div class="pocket_cover"></div>  
-            </div>  
-            <!-- 左手 -->  
-            <div class="left_hand">  
-                <!-- 左手臂 -->  
-                <div class="left_arm"></div>  
-                <!-- 左手掌   
-                <div class="left_palm"></div>-->
-            </div>  
-            <!-- 右手 -->  
-            <div class="right_hand">  
-                <!-- 右手臂 -->  
-                <div class="right_arm"></div>  
-                <!-- 右手掌 -->  
-                <div class="right_palm"></div>  
-            </div>  
-            <!-- 脚 -->  
-            <div class="foot">  
-                <!-- 左脚 -->  
-                <div class="left_foot"></div>  
-                <!-- 右脚 -->  
-                <div class="right_foot"></div>  
-                <div class="foot_crevice"></div>
-                <div class="foot_line"></div>
-            </div>  
-        </div>  
-    </div>  
-</body>  
-</html>  
+            function stop() {
+                clearInterval(timer);
+            }
+            function buttonsShow() {
+                for (var i = 0; i < buttons.length; i++) {
+                    if (buttons[i].className == "on") {
+                        buttons[i].className = "";
+                    }
+                }
+                buttons[index - 1].className = "on";
+            }
+            prev.onclick = function () {
+                index -= 1;
+                if (index < 1) {
+                    index = 5
+                }
+                buttonsShow();
+                animate(620);
+            };
+            next.onclick = function () {
+                index += 1;
+                if (index > 5) {
+                    index = 1
+                }
+                animate(-620);
+                buttonsShow();
+            };
+            for (var i = 0; i < buttons.length; i++) {
+                (function (i) {
+                    buttons[i].onclick = function () {
+                        var clickIndex = parseInt(this.getAttribute('index'));
+                        var offset = 620 * (index - clickIndex); 
+                        animate(offset);
+                        index = clickIndex; 
+                        buttonsShow();
+                    }
+                })(i)
+            }
+            container.onmouseover = stop;
+            container.onmouseout = play;
+            play();
+        }
+    </script>
+	</head>
+	<body>
+	<div id="container">
+		<div id="list" style="left:-120px;">
+			<img src="img/image5.jpg"  alt=""/>
+			<img src="img/image1.jpg"  alt=""/>
+			<img src="img/image2.jpg"  alt=""/>
+			<img src="img/image3.jpg"  alt=""/>
+			<img src="img/image4.jpg"  alt=""/>
+			<img src="img/image5.jpg"  alt=""/>
+			<img src="img/image1.jpg"  alt=""/>
+		</div>
+		<div class="ctrl">
+        <ul>
+            <li onclick="select(0)" id="li_0">1</li>
+            <li onclick="select(1)" id="li_1">2</li>
+            <li onclick="select(2)" id="li_2">3</li>
+            <li onclick="select(3)" id="li_3">4</li>
+            <li onclick="select(4)" id="li_4">5</li>
+
+        </ul>
+        </div>
+		<div id="buttons">
+			<span index="1" class="on"></span>
+			<span index="2"></span>
+			<span index="3"></span>
+			<span index="4"></span>
+			<span index="5"></span>
+		</div>
+		<a herf="javascript:;" class="arrow" id="prev">&lt;</a>
+		<a href="javascript:;" class="arrow" id="next">&gt;</a>
+		<!--<script src="js/myFocus-2.0.1.min.js"type="text/javascript"></script>
+		<script src="js/mf-pattern/mF_YSlider.js"type="text/javascript"></script>
+		<link href="js/mf-pattern/mF_YSlider.css"rel="stylesheet"type="text/css" />
+	</div>	
+	
+	</body>
+</html>
